@@ -25,13 +25,17 @@ function readyNow () {
 
         $.ajax({
             method: 'POST',
-            url: '/',
+            url: '/setup',
             data: ourData,
             success: function(response){
-                console.log('New game data sent', response);
+                console.log(response);
+                $('setup').hide();
+                $('newGame').show();
+                //ourData();
             }
-        })
-    }
-}
+        });
+
+
+}}
 
 $(document).ready(readyNow);

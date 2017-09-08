@@ -8,24 +8,42 @@
     <script src="scripts/client.js"></script>
     <link rel="stylesheet" href="views/style.css">
   
-    <title>Document</title>
+    <title>Random Guess Setup</title>
 </head>
 <body>
     <h1>Cool Game</h1>
-    <h2>Select Game Mode:</h2>
-        <p>Easy: Random number between 0-50</p>
-        <p>Medium: Random number between 0-100</p>
-        <p>Hard: Random number between 0-1000</p>
-    <select id="maxNumber">
-        <option id='easyMode'>Easy</option>
-        <option id='mediumMode'>Medium</option>
-        <option id='hardMode'>Hard</option>
-    </select>
-    <h2>Add Player Name:</h2>
-    <input type='text' placeholder='Player 1' id="Player1">
-    <input type='text' placeholder='Player 2' id="Player2">
-    <input type='text' placeholder='Player 3' id="Player3">
-    <input type='text' placeholder='Player 4' id="Player4">
-    <button id= "startGame">Start Game</button>
+    <setup>
+        <h2>Select Game Mode:</h2>
+            <p>Easy: Random number between 0-50</p>
+            <p>Medium: Random number between 0-100</p>
+            <p>Hard: Random number between 0-1000</p>
+        <select id="maxNumber">
+            <option id='easyMode'>Easy</option>
+            <option id='mediumMode'>Medium</option>
+            <option id='hardMode'>Hard</option>
+        </select>
+        <h2>Add Player Name:</h2>
+        <input type='text' placeholder='Player 1' id="Player1">
+        <input type='text' placeholder='Player 2' id="Player2">
+        <input type='text' placeholder='Player 3' id="Player3">
+        <input type='text' placeholder='Player 4' id="Player4">
+        <button id= "startGame">Start Game</button>
+    </setup>
+    <newGame style="display: none;">
+        <h2>New Game!</h2>
+        <player id="p1"><span>PLAYER 1:</span>
+            <input class="guess" placeholder="Guess a number">
+        </player></br>
+        <player id="p2"><span>PLAYER 2:</span>
+                <input class="guess" placeholder="Guess a number">
+        </player></br>
+        <player id="p3"><span>PLAYER 3:</span>
+                <input class="guess" placeholder="Guess a number">
+        </player></br>
+        <player id="p4"><span>PLAYER 4:</span>
+                <input class="guess" placeholder="Guess a number">
+        </player></br>
+        <button id="submitGuesses">Guess</button>
+    </newGame>
 </body>
 </html>

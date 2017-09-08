@@ -16,7 +16,7 @@ app.get('/', function(req, res){
     console.log('base url');
 })
 
-app.post('/', function(req, res){
+app.post('/setup', function(req, res){
     console.log(
         req.body.gameMode,
         req.body.firstPlayer,
