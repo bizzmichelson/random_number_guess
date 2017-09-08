@@ -3,6 +3,8 @@ var path = require('path');
 var port = 3000;
 var app = express();
 var bodyParser = require('body-parser');
+var randyNum = require('./modules/randyNum');
+var compareNums = require('./modules/compareNums');
 
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended:true}));
@@ -16,6 +18,8 @@ app.get('/', function(req, res){
     console.log('base url');
 })
 
+var randomNumber = 1001;
+
 app.post('/setup', function(req, res){
     console.log(
         req.body.gameMode,
@@ -24,7 +28,9 @@ app.post('/setup', function(req, res){
         req.body.thirdPlayer,
         req.body.fourthPlayer
     );
-    res.send('Received');
+    randomNumber = randyNum(req.body.gameMode);
+    console.log(randomNumber);
+    res.send('Random number generated.');
 })
 
 app.post('/guess', function(req, res){
@@ -34,5 +40,11 @@ app.post('/guess', function(req, res){
         req.body.player3,
         req.body.player4
     );
-    res.send('Received guesses');
+    var guessArray = [
+        req.body.player1,
+        req.body.player2,
+        req.body.player3,
+        req.body.player4
+    ];
+    res.send(compareNums(guessArray, randomNumber));;
 })

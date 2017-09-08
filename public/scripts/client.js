@@ -24,6 +24,11 @@ function gameStart(){
         fourthPlayer: $('#Player4').val()
     };
 
+    $('#player1div').children().first().text(ourData.firstPlayer + ':');
+    $('#player2div').children().first().text(ourData.secondPlayer + ':');
+    $('#player3div').children().first().text(ourData.thirdPlayer + ':');
+    $('#player4div').children().first().text(ourData.fourthPlayer + ':');
+
     $.ajax({
         method: 'POST',
         url: '/setup',
@@ -52,8 +57,10 @@ function guessNum(){
         data: ourGuesses,
         success: function(response){
             console.log(response);
-            $('setup').hide();
-            $('newGame').show();
+            for (var i = 0; i < response.length; i++){
+                $('#player' + (i + 1) +'div').children().last().text((response[i]));
+            }
+            
         }
     })
 
