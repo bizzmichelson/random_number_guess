@@ -21,14 +21,14 @@ function readyNow () {
             secondPlayer: $('#Player2').val(),
             thirdPlayer: $('#Player3').val(),
             fourthPlayer: $('#Player4').val()
-        }
+        };
 
         $.ajax({
             method: 'POST',
-            url: '/setup',
+            url: '/',
             data: ourData,
-            success: function(res){
-                console.log('New game data sent');
+            success: function(response){
+                console.log('New game data sent', response);
             }
         })
     }

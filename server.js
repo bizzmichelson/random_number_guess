@@ -16,7 +16,7 @@ app.get('/', function(req, res){
     console.log('base url');
 })
 
-app.post('/setup', function(req, res){
+app.post('/', function(req, res){
     console.log(
         req.body.gameMode,
         req.body.firstPlayer,
@@ -24,4 +24,5 @@ app.post('/setup', function(req, res){
         req.body.thirdPlayer,
         req.body.fourthPlayer
     );
+    res.send('Received');
 })
