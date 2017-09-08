@@ -26,3 +26,13 @@ app.post('/setup', function(req, res){
     );
     res.send('Received');
 })
+
+app.post('/guess', function(req, res){
+    console.log(
+        req.body.player1,
+        req.body.player2,
+        req.body.player3,
+        req.body.player4
+    );
+    res.send('Received guesses');
+})
