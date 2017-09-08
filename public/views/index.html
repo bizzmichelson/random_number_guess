@@ -30,7 +30,10 @@
         <button id= "startGame">Start Game</button>
     </setup>
     <newGame style="display: none;">
-        <h2>New Game!</h2>
+        <h2>Total Team Guesses: <span id="guessCounter">0</span></h2>
+        <p>Easy: Random number between 0-50</p>
+        <p>Medium: Random number between 0-100</p>
+        <p>Hard: Random number between 0-1000</p>
         <player id="player1div"><span>PLAYER 1:</span>
             <input class="guess" id="p1" placeholder="Guess a number">
             <checker></checker>

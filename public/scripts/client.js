@@ -1,5 +1,7 @@
 console.log('client-side source');
 
+var guessCounter = 0;
+
 function readyNow () {
     console.log('hey');
 
@@ -63,6 +65,14 @@ function guessNum(){
             
         }
     })
-
+    clickCounter();
+    $('#guessCounter').text(guessCounter);
 }
+
+
+
+function clickCounter() {
+    guessCounter++;
+}
+
 $(document).ready(readyNow);
