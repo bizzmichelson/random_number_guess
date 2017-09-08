@@ -2,6 +2,10 @@ console.log('client-side source');
 
 function readyNow () {
     console.log('hey');
+
+    $("#startGame").on('click', gameStart)
+
+
     $.ajax({
         method: 'GET',
         url: '/',
